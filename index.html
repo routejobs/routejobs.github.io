@@ -1,1 +1,411 @@
-"Hello World!" 
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>Route Jobs - Um novo modo de conectar</title>
+    </head>
+    <body>
+        <style>
+            .container {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+
+            .bottom-left {
+                position: absolute;
+                bottom: 8px;
+                left: 40px;
+            }
+
+            .home_text {
+                max-width: 40ch;
+            }
+
+            .sobre_text {
+                max-width: 80ch;
+            }
+
+            /* Style tab links */
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 20px;
+                font-family: "Lucida Console";
+                width: 20%;
+            }
+
+            .tablink:hover {
+                background-color: #777;
+            }
+
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+                color: black;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+            }
+
+            /* Popup container */
+            .popup {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .popup-profissional {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            /* The actual popup (appears on top) */
+            .popup .popuptext {
+                visibility: hidden;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -80px;
+            }
+
+            .popup-profissional .popuptext {
+                visibility: hidden;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -80px;
+            }
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+
+            .popup-profissional .popuptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+
+            /* Toggle this class when clicking on the popup container (hide and show the popup) */
+            .popup .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                -moz-animation: fadeIn 1s;
+                animation: fadeIn 1s
+            }
+
+            .popup-profissional .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                -moz-animation: fadeIn 1s;
+                animation: fadeIn 1s
+            }
+
+            /* Add a blue text color to links */
+            a {
+                color: dodgerblue;
+            }
+
+            #Home {background-color: white;}
+            #Vagas {background-color: white;}
+            #Profissionais {background-color: white;}
+            #Sobre {background-color: white;}
+            #Contato {background-color: white;}
+
+            /* Style inputs with type="text", select elements and textareas */
+            input[type=text], select, textarea {
+                width: 100%; /* Full width */
+                padding: 12px; /* Some padding */
+                border: 1px solid #ccc; /* Gray border */
+                border-radius: 4px; /* Rounded borders */
+                box-sizing: border-box; /* Make sure that padding and width stays in place */
+                margin-top: 6px; /* Add a top margin */
+                margin-bottom: 16px; /* Bottom margin */
+                resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+            }
+
+            /* Style the submit button with a specific background color etc */
+            button[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            /* When moving the mouse over the submit button, add a darker green color */
+            button[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            /* Add a background color and some padding around the form */
+            .container-form-contato {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+        </style>
+
+        <div class="container">
+            <img src="https://bromptondemo.files.wordpress.com/2019/08/cafe-768771_1920.jpg" style="width:1333px;height:400px;">
+            <div class="bottom-left" style="font-size:64px;font-family: 'Lucida Console'">Route Jobs
+            </div>
+        </div>
+        <button class="tablink" onclick="openPage('Home', this, 'black')" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('Vagas', this, 'black')">Vagas</button>
+        <button class="tablink" onclick="openPage('Profissionais', this, 'black')">Profissionais</button>
+        <button class="tablink" onclick="openPage('Sobre', this, 'black')">Sobre</button>
+        <button class="tablink" onclick="openPage('Contato', this, 'black')">Contato</button>
+
+        <div id="Home" class="tabcontent">
+            <h3 style="text-align: center;font-family: 'Lucida Console';font-size:28px">Um novo modo de conectar</h3>
+            <div style="margin: auto;width: 30%;text-align: center">
+                <p class="home_text" style="text-align: center;font-family: 'Lucida Console';font-size:16px">
+                    A Route Jobs surgiu com a proposta de ser uma alternativa na recolocação profissional.<br><br>
+                    Com a ocorrência da pandemia do COVID-19 e todos os impactos econômicos gerados, muitas empresas estão fazendo ajustes, parte deles ligados aos colaboradores.<br><br>
+                    A proposta da Route Jobs é oferecer uma plataforma onde a própria empresa cadastre ex-colaboradores no banco de talentos, como uma forma de recomendação, para empresas que estejam buscando profissionais para incorporar ao seu quadro.<br><br>
+                    A plataforma também permite a divulgação de vagas pelas empresas e a inscrição de candidatos a essas vagas.
+                </p>
+            </div>
+        </div>
+
+        <div id="Vagas" class="tabcontent">
+            <h3 style="text-align: center;font-family: 'Lucida Console';font-size:28px">Vagas</h3>
+            <br>
+            <br>
+            <div style="text-align: center"><a href="vagas_form.html">Caso queira inserir uma nova vaga, clique aqui.</a></div>
+            <br>
+            <br>
+            <div>
+                <table style="margin: auto;width: 50%">
+                    <thead style="background-color: black;font-size: 24px;text-align: center">
+                        <tr>
+                            <td style="color: white">Cargo</td>
+                            <td style="color: white">Empresa</td>
+                            <td style="color: white">Nível</td>
+                            <td style="color: white">Informações Adicionais</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estudante</td>
+                            <td>Fiap</td>
+                            <td>Júnior</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <div class="popup" onclick="popupDescricao();"><span class="popuptext" id="popupIdDescricao">Ser o melhor aluno da fiap</span>Descrição</div>
+                                    </li>
+                                    <li>
+                                        <div class="popup" onclick="popupRequisitos();"><span class="popuptext" id="popupIdRequisitos">Ter muita vontade de aprender</span>Requisitos</div>
+                                    </li>
+                                    <li>
+                                        <div class="popup" onclick="popupBeneficios();"><span class="popuptext" id="popupIdBeneficios">Conhecimento ilimitado</span>Benefícios</div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="Profissionais" class="tabcontent">
+            <h3 style="text-align: center;font-family: 'Lucida Console';font-size:28px">Profissionais</h3>
+            <br>
+            <br>
+            <div style="text-align: center"><a href="profissionais_form.html">Caso queira cadastrar um novo profissional, clique aqui.</a></div>
+            <br>
+            <br>
+            <div>
+                <table style="margin: auto;width: 50%">
+                    <thead style="background-color: black;font-size: 24px;text-align: center">
+                    <tr>
+                        <td style="color: white">Nome</td>
+                        <td style="color: white">Email</td>
+                        <td style="color: white">Último cargo</td>
+                        <td style="color: white">Informações Adicionais</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Joana Rodrigues</td>
+                        <td>joana.rodrigues@gmail.com</td>
+                        <td>Analista de projetos</td>
+                        <td>
+                            <div class="popup-profissional" onclick="popupProfissional();"><span class="popuptext" id="popupIdProfissional">Comunicativa, detalhista, ágil, competente, focada</span>Detalhes</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="Sobre" class="tabcontent">
+            <h3 style="text-align: center;font-family: 'Lucida Console';font-size:28px">Sobre</h3>
+            <div style="margin: auto;width: 50%;text-align: center">
+                <p class="sobre_text" style="text-align: center;font-family: 'Lucida Console'">
+                    Sabemos que em uma empresa existem uma série de variáveis onde o colaborador deve seguir para se manter na empresa,
+                    regras de comportamento, regras de postura e etc. E quando algumas dessas regras não são seguidas,
+                    o colaborador começa a ser “afastado” de algumas obrigações da empresa.
+                    E quando isso se torna uma frequência ele normalmente é mandado embora.<br><br>
+                    Porém nem sempre é assim, às vezes o colaborar segue todas as normas da empresa e faz todo o seu trabalho seguindo as datas dos entregáveis,
+                    reuniões, telefonemas etc.<br><br>
+                    E mesmo assim acaba sendo dispensado pela empresa por conta de corte que a empresa está fazendo para
+                    reduzir custos ou por escolha por conta que do menor tempo de empresa que ele tem dentre os demais.
+                    Nós estamos pensando em uma solução para esse tipo de profissional que foi ou será dispensado “injustamente”,
+                    pensando neles temos uma ideia de ao invés desse bom colaborador ser mandado embora,
+                    que tal a empresa atual desse colaborador usar a sua rede de contatos ou parcerias que ele tem,
+                    para indicar esse profissional para uma nova etapa da carreira dela,
+                    comunicando o mesmo o motivo que ele não poderá mais seguir com a empresa atual,
+                    se é por conta de corte ou verba, ou qualquer outro motivo que não consiga-o manter na folha de pagamento.<br><br>
+                    Ou até mesmo para um colaborador que sente que aquele ambiente não é mais o desejado,
+                    que não quer mais continuar seguindo com o trabalho na empresa,
+                    ele pode solicitar à empresa atual que gostaria de ser realocado em uma nova empresa.
+                    Com isso a sua empresa atual avalia o seu perfil de trabalho a sua evolução dentro da empresa,
+                    metas atingidas, se houve algum problema com algum outro colaborador,
+                    faz um score usando suas habilidades e aptidões e assim envia para a nova empresa que precisa de um
+                    profissional com a qualidades desse colaborador.<br><br>
+                    Assim a nova empresa que está precisando dos serviços dele entrará em contato e informando que é
+                    indicação da sua antiga empresa e pelas informações recebidas no dossiê gostaria que ele ocupasse a
+                    vaga que se encontra em aberto e assim o colaborar e a empresa nova tratam dos demais detalhes.<br><br>
+                    Nessa linha vem a ideia de uma empresa fazer uma indicação a outra empresa para que o empregado não
+                    seja demitido e evite que a empresa tenha que adquirir um empréstimo e aumentar sua dívida.
+                    Nesse momento é possível realizar em duas formas, uma espécie de empréstimo do funcionário,
+                    que pode evitar a rotatividade na empresa, a outra empresa ou a demissão do funcionário para a outra
+                    empresa realizar a contratação definitiva ou temporariamente.<br><br>
+                </p>
+            </div>
+        </div>
+
+        <div id="Contato" class="tabcontent">
+            <h3 style="text-align: center;font-family: 'Lucida Console';font-size:28px">Contato</h3>
+            <div>
+                <p style="text-align: center;font-family: 'Lucida Console'">Contact us.</p>
+            </div>
+            <div>
+                <h3 style="text-align: center;font-family: 'Lucida Console';font-size:24px"><b>Entre em contato conosco</b></h3>
+                <ul style="margin: auto;width: 50%;font-family: 'Lucida Console';">
+                    <li>Henrique Batista Lima; Email: hb-lima@hotmail.com</li>
+                    <li>José Ricardo Ranolfi; Email: jrranolfi@gmail.com</li>
+                    <li>Luiz Fernando Bassetto; Email: lf.bassetto95@gmail.com</li>
+                </ul>
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="container-form-contato">
+                <form action="action_page.php" method="post">
+                    <h1>Deixe uma mensagem</h1>
+                    <hr>
+
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome Completo.." required>
+                    <hr>
+
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email.." required>
+                    <hr>
+
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Assunto..">
+                    <hr>
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Deixe aqui sua mensagem.." style="height:200px" required></textarea>
+
+                    <button type="submit" value="Enviar">Enviar</button>
+
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function openPage(pageName, elmnt, color) {
+                // Hide all elements with class="tabcontent" by default */
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Remove the background color of all tablinks/buttons
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+
+                // Show the specific tab content
+                document.getElementById(pageName).style.display = "block";
+
+                // Add the specific color to the button used to open the tab content
+                elmnt.style.backgroundColor = color;
+            }
+
+            document.getElementById("defaultOpen").click();
+        </script>
+
+        <script>
+            function popupDescricao() {
+                var popup = document.getElementById("popupIdDescricao");
+                popup.classList.toggle("show");
+            }
+        </script>
+
+        <script>
+            function popupRequisitos() {
+                var popup = document.getElementById("popupIdRequisitos");
+                popup.classList.toggle("show");
+            }
+        </script>
+
+        <script>
+            function popupBeneficios() {
+                var popup = document.getElementById("popupIdBeneficios");
+                popup.classList.toggle("show");
+            }
+        </script>
+
+        <script>
+            function popupProfissional() {
+                var popup = document.getElementById("popupIdProfissional");
+                popup.classList.toggle("show");
+            }
+        </script>
+    </body>
+    <footer style="background-color: black;width:1335px">
+        <img src="https://github.com/routejobs/routejobs.github.io/blob/master/routejobs.jpg?raw=true" align="left">
+        <img src="https://github.com/routejobs/routejobs.github.io/blob/master/footer.jpg?raw=true" align="right">
+    </footer>
+</html>

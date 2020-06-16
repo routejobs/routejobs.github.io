@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscrição de novo profissional</title>
+</head>
+<body>
+<style>
+    * {box-sizing: border-box}
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+    }
+
+    /* Full-width input fields */
+    input[type=text] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    textarea  {
+        width: 900px;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit/register button */
+    .registerbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity:1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+</style>
+<form action="action_page.php" method="post">
+    <div class="container-form-profissional">
+        <h1>Inscrição</h1>
+        <p>Preencha o formulário corretamente para inserir uma nova vaga.</p>
+        <hr>
+
+        <label for="nome" style="font-size: 28px"><b>Nome</b></label>
+        <input type="text" placeholder="Digite o nome do profissional" name="nome" id="nome" required>
+        <hr>
+
+        <label for="email" style="font-size: 28px"><b>Email</b></label>
+        <input type="text" placeholder="Digite o email do profissional" name="email" id="email">
+        <hr>
+
+        <label for="cargo" style="font-size: 28px"><b>Último cargo</b></label>
+        <input type="text" placeholder="Digite o nível do último cargo do profissional" name="cargo" id="cargo" required>
+        <hr>
+
+        <label for="tempo" style="font-size: 28px"><b>Tempo de experiência na empresa</b></label>
+        <input type="text" placeholder="Digite o tempo de experiência do profissional na empresa" name="tempo" id="tempo" required>
+        <hr>
+
+        <label for="formacao" style="font-size: 28px"><b>Formação do profissional</b></label>
+        <input type="text" placeholder="Digite o tempo de experiência do profissional na empresa" name="formacao" id="formacao" required>
+        <hr>
+
+        <label for="descricao" style="font-size: 28px;alignment: top"><b>Descrição do profissional</b></label><br>
+        <textarea id="descricao" name="descricao" style="height:200px" required></textarea>
+        <hr>
+
+        <p>Ao completar o cadastro, você está concordando com os nossos <a href="#">Termos e Privacidade</a>.</p>
+        <button type="submit" class="registerbtn">Concluir</button>
+    </div>
+</form>
+</body>
+</html>

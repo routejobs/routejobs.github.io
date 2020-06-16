@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscrição de nova vaga</title>
+</head>
+<body>
+<style>
+    * {box-sizing: border-box}
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+    }
+
+    /* Full-width input fields */
+    input[type=text] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    textarea  {
+        width: 900px;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit/register button */
+    .registerbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity:1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+</style>
+<form action="action_page.php" method="post">
+    <div class="container-form-vaga">
+        <h1>Inscrição</h1>
+        <p>Preencha o formulário corretamente para inserir uma nova vaga.</p>
+        <hr>
+
+        <label for="cargo" style="font-size: 28px"><b>Cargo</b></label>
+        <input type="text" placeholder="Digite o cargo" name="cargo" id="cargo" required>
+        <hr>
+
+        <label for="empresa" style="font-size: 28px"><b>Empresa</b></label>
+        <input type="text" placeholder="Digite o nome da empresa" name="empresa" id="empresa">
+        <hr>
+
+        <label for="nivel" style="font-size: 28px"><b>Nível</b></label>
+        <input type="text" placeholder="Digite o nível do cargo" name="nivel" id="nivel" required>
+        <hr>
+
+        <label for="descricao" style="font-size: 28px;alignment: top"><b>Descrição</b></label><br>
+        <textarea id="descricao" name="descricao" style="height:200px" required></textarea>
+        <hr>
+
+        <label for="requisitos" style="font-size: 28px;alignment: top"><b>Requisitos</b></label><br>
+        <textarea id="requisitos" name="requisitos" style="height:200px;alignment: bottom" required></textarea>
+        <hr>
+
+        <label for="beneficios" style="font-size: 28px;alignment: top"><b>Benefícios</b></label><br>
+        <textarea id="beneficios" name="beneficios" style="height:200px"></textarea>
+        <hr>
+
+        <p>Ao completar o cadastro, você está concordando com os nossos <a href="#">Termos e Privacidade</a>.</p>
+        <button type="submit" class="registerbtn">Concluir</button>
+    </div>
+</form>
+</body>
+</html>
