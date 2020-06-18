@@ -210,16 +210,34 @@
             <br>
             <br>
             <div>
-                <table style="margin: auto;width: 50%">
-                    <thead style="background-color: black;font-size: 24px;text-align: center">
-                        <tr>
+                <table id="table-vagas" style="margin: auto;width: 50%">
+                <thead style="background-color: black;font-size: 24px;text-align: center">
+                       <tr>
                             <td style="color: white">Cargo</td>
                             <td style="color: white">Empresa</td>
                             <td style="color: white">Nível</td>
                             <td style="color: white">Informações Adicionais</td>
+                       </tr>
+                </thead>
+                <tbody>
+                       <tr>
+                            <td>Desenvolvedor</td>
+                            <td>Lbassetto Dados</td>
+                            <td>Pleno</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <div class="popup" onclick="popupDescricao();"><span class="popuptext" id="popupIdDescricao">Criação de crawlers, banco de dados, pipelines, análise de dados</span>Descrição</div>
+                                    </li>
+                                        <li>
+                                        <div class="popup" onclick="popupRequisitos();"><span class="popuptext" id="popupIdRequisitos">Python, SQL, GCP, AWS, Linux</span>Requisitos</div>
+                                    </li>
+                                        <li>
+                                        <div class="popup" onclick="popupBeneficios();"><span class="popuptext" id="popupIdBeneficios">Os que você quiser</span>Benefícios</div>
+                                    </li>
+                                </ul>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>Estudante</td>
                             <td>Fiap</td>
@@ -229,17 +247,17 @@
                                     <li>
                                         <div class="popup" onclick="popupDescricao();"><span class="popuptext" id="popupIdDescricao">Ser o melhor aluno da fiap</span>Descrição</div>
                                     </li>
-                                    <li>
+                                        <li>
                                         <div class="popup" onclick="popupRequisitos();"><span class="popuptext" id="popupIdRequisitos">Ter muita vontade de aprender</span>Requisitos</div>
                                     </li>
-                                    <li>
+                                        <li>
                                         <div class="popup" onclick="popupBeneficios();"><span class="popuptext" id="popupIdBeneficios">Conhecimento ilimitado</span>Benefícios</div>
                                     </li>
                                 </ul>
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
             </div>
         </div>
 
@@ -251,26 +269,34 @@
             <br>
             <br>
             <div>
-                <table style="margin: auto;width: 50%">
-                    <thead style="background-color: black;font-size: 24px;text-align: center">
+                <table id="table-profissionais" style="margin: auto;width: 50%">
+                <thead style="background-color: black;font-size: 24px;text-align: center">
+                       <tr>
+                            <td style="color: white">Nome</td>
+                            <td style="color: white">Email</td>
+                            <td style="color: white">Último cargo</td>
+                            <td style="color: white">Informações Adicionais</td>
+                       </tr>
+                </thead>
+                <tbody>
+                       <tr>
+                            <td>Manoel Silva</td>
+                            <td>manoel.silva@hotmail.com</td>
+                            <td>Desenvolvedor Java</td>
+                            <td>
+                                <div class="popup-profissional" onclick="popupProfissional();"><span class="popuptext" id="popupIdProfissional">Tempo de experiência na última empresa: 4 anos; Formações: CST em Análise de Sistemas; Comentários: Prestativo, ágil, comunicativo, aprende fácil, inovativo</span>Detalhes</div>
+                            </td>
+                       </tr>
                     <tr>
-                        <td style="color: white">Nome</td>
-                        <td style="color: white">Email</td>
-                        <td style="color: white">Último cargo</td>
-                        <td style="color: white">Informações Adicionais</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Joana Rodrigues</td>
-                        <td>joana.rodrigues@gmail.com</td>
-                        <td>Analista de projetos</td>
-                        <td>
-                            <div class="popup-profissional" onclick="popupProfissional();"><span class="popuptext" id="popupIdProfissional">Comunicativa, detalhista, ágil, competente, focada</span>Detalhes</div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                            <td>Joana Rodrigues</td>
+                            <td>joana.rodrigues@gmail.com</td>
+                            <td>Analista de projetos</td>
+                            <td>
+                                <div class="popup-profissional" onclick="popupProfissional();"><span class="popuptext" id="popupIdProfissional">Tempo de experiência na última empresa: 4 anos; Formações: Bacharelado em Engenharia de Produção, MBA em Gerencimaneto de projetos; Comentários: Comunicativa, toma a liderança, ágil, focada</span>Detalhes</div>
+                            </td>
+                       </tr>
+                </tbody>
+            </table>
             </div>
         </div>
 
